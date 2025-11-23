@@ -1,0 +1,57 @@
+1️⃣ Create a dictionary with 5 products
+`python
+
+Dictionary of products and their stock quantities
+stock = {
+    "Apples": 25,
+    "Bananas": 12,
+    "Oranges": 8,
+    "Mangoes": 15,
+    "Pineapples": 5
+}
+
+print("Initial stock:", stock)
+`
+
+---
+
+2️⃣ Add a new product and update an existing one
+`python
+
+Add new product
+stock["Grapes"] = 20
+
+Update quantity of an existing product (e.g., Bananas)
+stock["Bananas"] = 18
+
+print("Updated stock:", stock)
+`
+
+---
+
+3️⃣ Function to return products with stock less than 10
+`python
+def lowstockproducts(stock_dict):
+    return [product for product, qty in stock_dict.items() if qty < 10]
+
+print("Products with stock < 10:", lowstockproducts(stock))
+`
+
+---
+
+4️⃣ Delete a discontinued product and display updated dictionary
+`python
+
+Remove discontinued product (e.g., Pineapples)
+del stock["Pineapples"]
+
+print("Stock after removing Pineapples:", stock)
+`
+
+---
+
+5️⃣ Use .items() to loop through and print each product with its quantity
+`python
+for product, qty in stock.items():
+    print(f"Product: {product}, Quantity: {qty}")
+`
