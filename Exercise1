@@ -1,0 +1,55 @@
+1️⃣ Create a 2D array (4 branches × 6 months)
+`python
+import numpy as np
+    [120, 150, 130, 160, 170, 180],  # Branch 1
+    [200, 210, 190, 220, 230, 240],  # Branch 2
+    [90, 100, 95, 110, 105, 115],    # Branch 3
+    [300, 310, 320, 330, 340, 350]   # Branch 4
+])
+
+print("Transaction volumes:\n", transactions)
+`
+
+ This creates a 4×6 matrix where rows = branches, columns = months.
+
+---
+
+2️⃣ Total transactions per branch
+`python
+branch_totals = np.sum(transactions, axis=1)
+print("Total transactions per branch:", branch_totals)
+`
+
+- axis=1 → sum across columns (months).
+- Output: [910, 1290, 615, 1950]
+
+---
+
+3️⃣ Identify branch with highest total transactions
+`python
+highestbranch = np.argmax(branchtotals) + 1  # +1 for human-readable branch index
+print("Branch with highest transactions:", highest_branch)
+`
+
+- np.argmax → index of max value.
+- Here, Branch 4 has the highest total (1950).
+
+---
+
+4️⃣ Average monthly transaction volume across all branches
+`python
+avg_monthly = np.mean(transactions, axis=0)
+print("Average monthly transactions:", avg_monthly)
+`
+
+- axis=0 → mean across rows (branches).
+ [177.5, 192.5, 183.75, 205, 211.25, 221.25]
+
+---
+
+5️⃣ Reshape to 3×8 format
+`python
+reshaped = transactions.reshape(3, 8)
+print("Reshaped array (3x8):\n", reshaped)
+`
+
